@@ -1858,44 +1858,44 @@
       }
 
       // Contact form submission
-      const contactForm = document.getElementById("contact-form");
-      if (contactForm && window.emailjs) {
-        emailjs.init("ur6CBP3DF-g1XDvNY");
+      // const contactForm = document.getElementById("contact-form");
+      // if (contactForm && window.emailjs) {
+      //   emailjs.init("ur6CBP3DF-g1XDvNY");
 
-        contactForm.addEventListener("submit", async (event) => {
-          event.preventDefault();
-          const button = contactForm.querySelector(".form-btn");
-          const name = contactForm.querySelector("[name=name]").value.trim();
-          const email = contactForm.querySelector("[name=email]").value.trim();
-          const message = contactForm
-            .querySelector("[name=message]")
-            .value.trim();
+      //   contactForm.addEventListener("submit", async (event) => {
+      //     event.preventDefault();
+      //     const button = contactForm.querySelector(".form-btn");
+      //     const name = contactForm.querySelector("[name=name]").value.trim();
+      //     const email = contactForm.querySelector("[name=email]").value.trim();
+      //     const message = contactForm
+      //       .querySelector("[name=message]")
+      //       .value.trim();
 
-          if (!name || !email || !message) {
-            alert("모든 항목을 입력해주세요.");
-            return;
-          }
+      //     if (!name || !email || !message) {
+      //       alert("모든 항목을 입력해주세요.");
+      //       return;
+      //     }
 
-          button.disabled = true;
-          button.textContent = "Sending...";
+      //     button.disabled = true;
+      //     button.textContent = "Sending...";
 
-          try {
-            await emailjs.sendForm(
-              "service_zjgvcui",
-              "template_mn82d3f",
-              contactForm,
-            );
-            alert("메일이 성공적으로 전송되었습니다!");
-            contactForm.reset();
-          } catch (error) {
-            console.error("EmailJS error:", error);
-            alert("메일 전송에 실패했습니다. 이메일 설정을 확인해 주세요.");
-          } finally {
-            button.disabled = false;
-            button.textContent = "SEND MESSAGE →";
-          }
-        });
-      }
+      //     try {
+      //       await emailjs.sendForm(
+      //         "service_zjgvcui",
+      //         "template_mn82d3f",
+      //         contactForm,
+      //       );
+      //       alert("메일이 성공적으로 전송되었습니다!");
+      //       contactForm.reset();
+      //     } catch (error) {
+      //       console.error("EmailJS error:", error);
+      //       alert("메일 전송에 실패했습니다. 이메일 설정을 확인해 주세요.");
+      //     } finally {
+      //       button.disabled = false;
+      //       button.textContent = "SEND MESSAGE →";
+      //     }
+      //   });
+      // }
     </script>
   </body>
 </html>
